@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="올리브영 홈 화면과 픽업 UX를 개선한 리뉴얼 프로토타입">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OLIVE YOUNG Renewal Prototype">
+  <meta property="og:description" content="올리브영 홈 화면과 픽업 UX를 개선한 포트폴리오용 리뉴얼 프로토타입">
+  <meta property="og:image" content="images/preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OLIVE YOUNG Renewal Prototype">
+  <meta name="twitter:description" content="올리브영 홈 화면과 픽업 UX를 개선한 포트폴리오용 리뉴얼 프로토타입">
+  <meta name="twitter:image" content="images/preview.png">
+  <title>OLIVE YOUNG Renewal Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="utility">
+      <a href="#" class="require-login">회원가입</a>
+      <a href="#" class="require-login">로그인</a>
+      <a href="#" class="require-login">장바구니</a>
+      <a href="#" class="require-login">주문배송</a>
+      <a href="#" class="require-login">고객센터</a>
+      <a href="#">올영매장</a>
+      <a href="#">Global</a>
+    </div>
+
+    <div class="header-main">
+      <a class="logo" href="#top" aria-label="OLIVE YOUNG 홈">
+        <img src="images/oliveyoung-logo.png" alt="OLIVE YOUNG 로고">
+      </a>
+      <form class="search" role="search">
+        <label for="searchInput">상품 검색</label>
+        <input id="searchInput" type="search" value="선크림, 클렌징밤, 수분 세럼">
+        <button type="button">검색</button>
+      </form>
+      <div class="header-actions">
+        <button type="button" class="require-login" aria-label="찜한 상품">찜</button>
+        <button type="button" class="cart-button require-login">장바구니 <b>4</b></button>
+      </div>
+    </div>
+
+    <nav class="gnb" aria-label="주요 메뉴">
+      <button type="button" class="category-button">카테고리</button>
+      <a href="#today">오특</a>
+      <a href="#ranking">랭킹</a>
+      <a href="#better">올리브베러</a>
+      <a href="#theme">테마관</a>
+      <a href="#event">기획전</a>
+      <a href="#products">세일</a>
+      <a href="#membership">멤버십/쿠폰</a>
+      <a href="#pickup">픽업</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="main-visual" aria-label="메인 프로모션">
+      <div class="visual-stage">
+        <div class="hero-banner">
+          <img id="heroBannerImage" src="images/hero-01-survival-beauty.jpg" alt="길어진 여름 속 피부를 구해줄 생존 뷰티템">
+          <div class="banner-copy">
+            <span id="heroBannerBrand">서바이벌 뷰티</span>
+            <h1 id="heroBannerTitle">길어진 여름 속<br>피부를 구해줄<br>생존 뷰티템</h1>
+            <p id="heroBannerDesc">미션 참여하고 키트 받기</p>
+          </div>
+          <div class="banner-controls" aria-label="배너 컨트롤">
+            <button type="button" id="bannerPrev" aria-label="이전 배너">‹</button>
+            <span id="bannerCount">1/4</span>
+            <button type="button" id="bannerNext" aria-label="다음 배너">›</button>
+            <button type="button" id="bannerPause" aria-label="배너 일시정지">Ⅱ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pickup-bar" id="pickup" aria-label="픽업 빠른 확인">
+      <div>
+        <strong>올영매장찾기</strong>
+        <span>지금 찾는 상품, 가까운 매장에서 재고 확인</span>
+      </div>
+      <div class="pickup-status">
+        <b>강남대로점</b>
+        <span>0.8km · 선택 상품 4/4개 가능 · 오늘 18:30 이후</span>
+      </div>
+      <button type="button" class="open-store-modal">모두 가능한 매장 보기</button>
+    </section>
+
+    <section class="quick-menu" aria-label="자주 찾는 메뉴">
+      <a href="#pickup"><span>01</span><strong>픽업 매장 찾기</strong><em>재고 묶음 확인</em></a>
+      <a href="#today"><span>02</span><strong>오특</strong><em>오늘의 특가</em></a>
+      <a href="#ranking"><span>03</span><strong>실시간 랭킹</strong><em>카테고리별 인기</em></a>
+      <a href="#membership"><span>04</span><strong>쿠폰/멤버십</strong><em>혜택 모아보기</em></a>
+    </section>
+
+    <section class="section weekly-section" id="today">
+      <div class="section-title row">
+        <div>
+          <p class="eyebrow">Weekly Special</p>
+          <h2>이번 주 올영 특가</h2>
+        </div>
+        <a class="more-link" href="#">전체보기</a>
+      </div>
+      <div class="weekly-grid">
+        <article class="weekly-card">
+          <img src="images/product-mediheal-sunscreen.jpg" alt="수분 선세럼 특가">
+          <div>
+            <span>선케어 집중전</span>
+            <h3>길어진 여름, 피부를 지키는 수분 선케어</h3>
+            <p>#오늘드림 #픽업가능 #1만원대특가</p>
+          </div>
+        </article>
+        <article class="weekly-card dark">
+          <img src="images/product-banila-cleansing-balm.jpg" alt="클렌징밤 특가">
+          <div>
+            <span>클렌징 루틴</span>
+            <h3>피지부터 메이크업까지 한 번에 정리</h3>
+            <p>#클렌징밤 #증정 #픽업가능</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section promo-section" id="popular">
+      <div class="section-title row">
+        <div>
+          <p class="eyebrow">Popular Event</p>
+          <h2>인기 행사만 모았어요!</h2>
+        </div>
+        <a class="more-link" href="#">더보기</a>
+      </div>
+      <div class="event-grid">
+        <article class="event-tile large">
+          <img src="images/hero-02-physiogel.jpg" alt="피지오겔 선케어 행사">
+          <strong>속촉촉 겉보송 선케어</strong>
+          <span>단독 혜택 & 쿠폰</span>
+        </article>
+        <article class="event-tile">
+          <img src="images/product-mediheal-mask-pack.jpg" alt="메디힐 마스크팩">
+          <strong>마스크팩 집중 케어</strong>
+          <span>오늘드림 가능</span>
+        </article>
+        <article class="event-tile">
+          <img src="images/product-gynomaster-probiotics.png" alt="지노마스터 질유산균">
+          <strong>이너뷰티 루틴</strong>
+          <span>건강식품 특가</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pickup-section" id="pickup-flow">
+      <div class="section-title">
+        <p class="eyebrow">Pickup Flow</p>
+        <h2>장바구니 기준 픽업 매장 추천</h2>
+      </div>
+      <div class="pickup-layout">
+        <div class="cart-panel">
+          <div class="panel-head">
+            <h3>선택 상품</h3>
+            <span>4 items</span>
+          </div>
+          <ul id="cartList"></ul>
+          <button type="button" class="open-store-modal">모두 픽업 가능한 매장 보기</button>
+        </div>
+        <div class="store-panel">
+          <div class="panel-head">
+            <h3>추천 매장</h3>
+            <span>선택 상품 기준</span>
+          </div>
+          <div id="storeCards"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-title row">
+        <div>
+          <p class="eyebrow">Recommended</p>
+          <h2>고객님을 위한 상품 추천</h2>
+        </div>
+        <div class="filter-tabs" role="group" aria-label="상품 필터">
+          <button class="active">전체</button>
+          <button>픽업가능</button>
+          <button>오늘드림</button>
+          <button>세일</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="section suggest-section">
+      <div class="section-title row">
+        <div>
+          <p class="eyebrow">For You</p>
+          <h2>최근 본 상품과 비슷해요</h2>
+        </div>
+        <a class="more-link" href="#">더보기</a>
+      </div>
+      <div class="suggest-grid">
+        <article><img src="images/product-birch-sunscreen.jpg" alt="자작나무 수분 선크림"><strong>자작나무 수분 선크림</strong><span>가볍게 바르는 수분 선케어</span></article>
+        <article><img src="images/product-graymelin-cleansing-oil.jpg" alt="그레이멜린 클렌징오일"><strong>카놀라 크레이지 클렌징오일</strong><span>진한 메이크업까지 한 번에</span></article>
+        <article><img src="images/product-bioderma-sensibio.jpg" alt="바이오더마 센시비오"><strong>바이오더마 센시비오</strong><span>민감 피부 클렌징 루틴</span></article>
+        <article><img src="images/product-holika-eyeshadow.jpg" alt="홀리카 아이섀도우"><strong>마이페이브 피스 아이섀도우</strong><span>데일리 음영 메이크업</span></article>
+      </div>
+    </section>
+
+    <section class="section ranking" id="ranking">
+      <div class="section-title">
+        <p class="eyebrow">Ranking</p>
+        <h2>카테고리 랭킹</h2>
+      </div>
+      <div class="ranking-grid">
+        <article><b>01</b><span>선케어</span><strong>메디힐 수분 선세럼</strong></article>
+        <article><b>02</b><span>스킨케어</span><strong>아비브 어성초 세럼</strong></article>
+        <article><b>03</b><span>클렌징</span><strong>바닐라코 클렌징밤</strong></article>
+        <article><b>04</b><span>메이크업</span><strong>홀리카 아이섀도우</strong></article>
+      </div>
+    </section>
+
+    <section class="section theme-section" id="theme">
+      <div class="section-title">
+        <p class="eyebrow">Theme</p>
+        <h2>테마관</h2>
+      </div>
+      <div class="theme-grid">
+        <article><strong>여름 생존 뷰티</strong><span>선케어 · 진정 · 클렌징</span></article>
+        <article><strong>모공 탄력 루틴</strong><span>앰플 · 크림 · 패드</span></article>
+        <article><strong>민감 피부 클렌징</strong><span>밀크 · 밤 · 워터</span></article>
+      </div>
+    </section>
+
+    <section class="section update-section">
+      <div class="section-title row">
+        <div>
+          <p class="eyebrow">New Update</p>
+          <h2>신상 업데이트</h2>
+        </div>
+        <a class="more-link" href="#">신상 전체보기</a>
+      </div>
+      <div class="update-grid">
+        <article>
+          <img src="images/hero-03-beauty-tool.jpg" alt="미용소품 뷰티툴 관리템">
+          <strong>맑게 얼리고 부드럽게 구운 바닐라 레시피</strong>
+        </article>
+        <article>
+          <img src="images/hero-04-betterfocus.jpg" alt="베러포커스 푸드올로지">
+          <strong>지중해 원물로 먹으면서 비우는 쉬운 습관</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section event-section" id="event">
+      <div class="event-card">
+        <p class="eyebrow">Event</p>
+        <h2>픽업 주문 전용 쿠폰을 홈에서 바로 확인</h2>
+        <p>매장 재고 확인 후 이탈하지 않도록 픽업 가능 상품, 쿠폰, 수령 시간을 한 화면에서 묶어 보여줍니다.</p>
+      </div>
+      <div class="coupon-card" id="membership">
+        <strong>픽업 첫 주문</strong>
+        <span>3,000원 할인</span>
+        <button type="button" class="require-login">쿠폰 받기</button>
+      </div>
+    </section>
+
+    <section class="section only-section" id="better">
+      <div class="section-title row">
+        <div>
+          <p class="eyebrow">Only Olive Young</p>
+          <h2>오직 올리브영에서만</h2>
+        </div>
+        <a class="more-link" href="#">더보기</a>
+      </div>
+      <div class="only-grid">
+        <article><img src="images/product-moisture-cream.jpg" alt="수분 압축 크림"><strong>단독 기획 수분 압축 크림</strong></article>
+        <article><img src="images/product-nmn-pore-lifting-ampoule.jpg" alt="NMN 포어 리프팅 앰플"><strong>모공 리프팅 앰플 특가</strong></article>
+        <article><img src="images/product-mirileaf-cleansing-milk.jpg" alt="모이스처 클렌징밀크"><strong>민감 피부 클렌징 밀크</strong></article>
+      </div>
+    </section>
+
+    <section class="section trending-section">
+      <div class="section-title row">
+        <div>
+          <p class="eyebrow">Trending Search</p>
+          <h2>조회 급상승 인기템</h2>
+        </div>
+        <a class="more-link" href="#">더보기</a>
+      </div>
+      <div class="trend-layout">
+        <article class="trend-product">
+          <img src="images/product-birch-sunscreen.jpg" alt="자작나무 수분 선크림">
+          <div>
+            <strong>자작나무 수분 선크림</strong>
+            <span>최근 6시간 조회 상승</span>
+            <b>11,900원</b>
+          </div>
+        </article>
+        <ol class="trend-list">
+          <li><span>01</span> 수분 선크림</li>
+          <li><span>02</span> 클렌징밤</li>
+          <li><span>03</span> 어성초 세럼</li>
+          <li><span>04</span> 모공 앰플</li>
+          <li><span>05</span> 마스크팩</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="storeModal" aria-hidden="true">
+    <section class="store-modal" role="dialog" aria-modal="true" aria-labelledby="storeModalTitle">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">Store Selector</p>
+          <h2 id="storeModalTitle">선택 상품 모두 픽업 가능한 매장</h2>
+        </div>
+        <button type="button" class="close-modal" aria-label="닫기">×</button>
+      </div>
+      <div class="modal-chips">
+        <button class="active">전체 상품</button>
+        <button>세럼</button>
+        <button>선세럼</button>
+        <button>클렌징밤</button>
+        <button>바이오더마</button>
+      </div>
+      <div id="modalStoreCards"></div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="loginModal" aria-hidden="true">
+    <section class="login-modal" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+      <button type="button" class="close-modal login-close" aria-label="닫기">×</button>
+      <div class="login-head">
+        <img src="images/oliveyoung-logo.png" alt="OLIVE YOUNG 로고">
+        <h2 id="loginModalTitle">로그인</h2>
+        <p>회원 전용 메뉴 이용을 위해 로그인이 필요합니다.</p>
+      </div>
+      <form class="login-form">
+        <label>
+          <span>아이디</span>
+          <input type="text" placeholder="CJ ONE 통합회원 아이디">
+        </label>
+        <label>
+          <span>비밀번호</span>
+          <input type="password" placeholder="비밀번호">
+        </label>
+        <div class="captcha-box">
+          <span class="captcha-check"></span>
+          <strong>사람인지 확인해주세요</strong>
+          <em>보안 확인</em>
+        </div>
+        <div class="login-options">
+          <label><input type="checkbox" checked> 아이디 저장</label>
+          <div>
+            <a href="#">아이디 찾기</a>
+            <a href="#">비밀번호 찾기</a>
+          </div>
+        </div>
+        <button type="button" class="login-primary">로그인</button>
+        <button type="button" class="login-kakao">카카오로 로그인</button>
+      </form>
+      <div class="join-box">
+        <div>
+          <strong>CJ ONE 통합회원</strong>
+          <p>가입 후 올리브영의 혜택과 주문 서비스를 이용해보세요.</p>
+        </div>
+        <button type="button">회원가입</button>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/oliveyoung-logo.png" alt="OLIVE YOUNG 로고">
+        <p>공식 사이트의 정보 구조를 참고해 제작한 포트폴리오용 리뉴얼 프로토타입입니다.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h3>고객센터</h3>
+          <strong>1522-0882</strong>
+          <p>평일 09:00 - 18:00</p>
+          <p>주말/공휴일 휴무</p>
+        </div>
+        <div>
+          <h3>서비스</h3>
+          <a href="#">올영매장찾기</a>
+          <a href="#">오늘드림</a>
+          <a href="#">픽업주문</a>
+          <a href="#">멤버십/쿠폰</a>
+        </div>
+        <div>
+          <h3>정책</h3>
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">청소년보호방침</a>
+          <a href="#">입점/제휴 문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Reference: Olive Young online mall</span>
+      <a href="https://www.oliveyoung.co.kr/store/main/main.do" target="_blank" rel="noopener">공식 사이트 참고 링크</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
