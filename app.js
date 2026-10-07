@@ -306,7 +306,7 @@ function renderStores() {
   const suggested = results.find((result) => result.complete);
   const result = selected || suggested;
   $('#pickupStatus b').textContent = result ? (selected ? '' : '추천 · ') + result.store.name : '선택 매장 없음';
-  $('#pickupStatus span').textContent = result ? result.store.distance + 'km · ' + result.matched + '/' + state.cart.length + '종 가능 · ' + result.store.window + ' (데모)' : state.cart.length ? '전체 매장에서 상품별 재고를 확인해주세요.' : '상품을 선택하면 매장을 추천합니다.';
+  $('#pickupStatus span').textContent = result ? result.store.distance + 'km · ' + result.matched + '/' + state.cart.length + '종 가능 · ' + result.store.window : state.cart.length ? '전체 매장에서 상품별 재고를 확인해주세요.' : '상품을 선택하면 매장을 추천합니다.';
 }
 
 function renderCart() {
@@ -364,7 +364,6 @@ function showDetail(id) {
     <p class="original-price">${escapeHtml(product.originalPrice)}</p>
     <div class="badges">${product.badges.map((badge) => '<span class="badge">' + escapeHtml(badge) + '</span>').join('')}</div>
     <h3>매장별 재고</h3><ul class="detail-stocks">${stores.map((store) => '<li><span>' + escapeHtml(store.name) + '</span><strong>' + (store.stock[id] ? store.stock[id] + '개' : '픽업 불가') + '</strong></li>').join('')}</ul>
-    <p class="detail-note">재고와 수령 시간은 데모 데이터입니다. 실제 주문이나 예약은 진행되지 않습니다.</p>
     <label class="detail-quantity" for="detailQuantity">수량<input id="detailQuantity" type="number" min="1" max="${maxQuantity}" step="1" value="1"></label>
     <p id="detailNotice" class="detail-notice" role="status"></p>
     <button type="button" class="detail-add" data-detail-add="${id}">선택 상품에 담기</button>
@@ -470,7 +469,7 @@ document.addEventListener('click', (event) => {
     commit();
     closeLayer();
     startHeroAuto();
-    notify(store.name + '을 픽업 매장으로 선택했습니다. 실제 예약은 진행되지 않습니다.');
+    notify(store.name + '을 픽업 매장으로 선택했습니다.');
   }
   else if (data.storeFilter) { storeFilter = data.storeFilter; renderStores(); }
   else if (data.productFilter) {
@@ -499,7 +498,7 @@ document.addEventListener('click', (event) => {
   }
   else if (trigger.id === 'couponButton') { state.coupon = true; commit(); notify('픽업 쿠폰을 받았습니다. 3만원 이상, 전체 픽업 매장 선택 시 적용됩니다.'); }
   else if (data.demoInfo) notify(data.demoInfo);
-  else if (trigger.getAttribute('href') === '#') { event.preventDefault(); notify('이 메뉴는 화면 시안입니다. 실제 회원·정책 서비스는 제공하지 않습니다.'); }
+  else if (trigger.getAttribute('href') === '#') { event.preventDefault(); notify('현재 이용할 수 없는 메뉴입니다.'); }
 });
 document.addEventListener('click', (event) => {
   if (!event.target.closest('.category-button, .category-menu')) {
@@ -577,4 +576,4 @@ renderCart();
 renderProducts();
 renderHeroSlide(0, true);
 startHeroAuto();
-if (storageWarning) notify('저장된 선택 정보를 읽지 못해 기본 목록을 표시합니다. 실제 계정 정보는 저장하지 않습니다.');
+if (storageWarning) notify('저장된 선택 정보를 읽지 못해 기본 목록을 표시합니다.');
